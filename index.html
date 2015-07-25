@@ -243,11 +243,6 @@
 				history: true,
 				center: true,
 				autoSlide: 5000,
-				audioPrefix: 'audio/',	// audio files are stored in the "audio" folder
-				audioSuffix: '.ogg',	// audio files have the ".ogg" ending
-				keyboard: { 
-					82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
-					90: function() { Recorder.downloadZip(); } 	// press 'z' to download zip containing audio files
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
@@ -257,9 +252,6 @@
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
-					{ src: 'plugin/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },				
-					{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
