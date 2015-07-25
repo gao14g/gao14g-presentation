@@ -48,7 +48,7 @@
 					</p>
 					</section>
 				
-				<section data-audio-src="audio/02-second-slide.ogg">
+				<section id="01" data-audio-src="audio/02-second-slide.ogg">
 					<p class="fragment">
 						<img src="http://vendyxiao.com/wp-content/uploads/2013/02/ryu1.jpg" alt="Fighting Character" style="width:300px;height:300px;">
 					</p>
@@ -60,7 +60,7 @@
 					</span>
 				</section>
 				
-				<section data-background="http://1.bp.blogspot.com/-0B9gN3gn3-4/VE1GgBmUxyI/AAAAAAAAByI/iIrTHeiog40/s1600/iStock_000025402814Small.jpg">
+				<section id="02" data-background="http://1.bp.blogspot.com/-0B9gN3gn3-4/VE1GgBmUxyI/AAAAAAAAByI/iIrTHeiog40/s1600/iStock_000025402814Small.jpg">
 				</section>
 
 				<section>
@@ -245,6 +245,13 @@
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
+					//autoSlide: 5000,
+				audioPrefix: 'audio/',        // audio files are stored in the "audio" folder
+				audioSuffix: '.ogg',	      // audio files have the ".ogg" ending
+				audioDefaultDuration: 5, // default duration if no audio is available
+				audioPlayerOpacity: 0.05,     // opacity value of audio player if unfocused
+				audioTextToSpeechURL: "http://tts-api.com/tts.mp3?q=",  // text is added to this URL
+				
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -253,6 +260,7 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } }
 				]
 			});
 
